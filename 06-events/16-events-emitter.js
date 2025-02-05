@@ -9,7 +9,7 @@ customEmitter.on("response", (name, age) => {
 });
 
 // you can have as many modules as you want
-customEmitter.on("response", (name, age) => {
+customEmitter.on("response", () => {
   console.log(`some other logic here.`);
 });
 
