@@ -1,4 +1,4 @@
-import EventEmitter from "events"; // EventEmitter is a class from the Node.js events module that allows you to handle events in an asynchronous, event-driven architecture.
+import { EventEmitter } from "events"; // EventEmitter is a class from the Node.js events module that allows you to handle events in an asynchronous, event-driven architecture.
 
 const customEmitter = new EventEmitter();
 // on - listen for an event

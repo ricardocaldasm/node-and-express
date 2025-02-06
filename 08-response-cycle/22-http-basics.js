@@ -1,6 +1,9 @@
 import http from "http"; // built-in
 import { readFileSync } from "fs";
 
+// get all files
+const homePage = readFileSync("./22-01-index.html");
+
 const server = http.createServer((req, res) => {
   console.log("User hit server.");
   // console.log(req);
@@ -10,8 +13,8 @@ const server = http.createServer((req, res) => {
   if (url === "/") {
     // HOME PAGE
     res.writeHead(200, { "content-type": "text/html" }); // text/html are MIME types
-    res.write("<h1>Home Page</h1>");
-    res.end("Hello World"); // This method signals to the server that all of the response headers and body have been sent; that server should consider this message complete. The method, response.end(), MUST be called on each response.
+    res.write(homePage);
+    res.end(); // This method signals to the server that all of the response headers and body have been sent; that server should consider this message complete. The method, response.end(), MUST be called on each response.
     return;
   } else if (url === "/about") {
     // ABOUT PAGE
